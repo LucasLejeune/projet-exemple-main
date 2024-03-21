@@ -1,0 +1,24 @@
+name: Test et build du projet quand push sur la branche main puis affichage des fichiers en console
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  build: 
+    name: Test et build du projet puis upload en l'artefact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm test
+      - name: Build code
+        run: npm run build
+      - name: Upload the result of the build
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-files
+          path: .dist/ 
+
