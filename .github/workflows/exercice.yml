@@ -22,7 +22,7 @@ jobs:
           name: dist-files
           path: dist
   downloadAndConsoleOutput:
-  needs: [testAndBuild]
+    needs: [testAndBuild]
     name: telecharge les artefactes et affiche le contenu de dist.txt
     runs-on: ubuntu-latest
     steps:
