@@ -20,5 +20,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist-files
-          path: .next/dist/*
+          path: dist
   # downloadAndConsoleOutput:
