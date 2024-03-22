@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer le résultat du 1er workflow
+        id: run-test
         uses: ./projet-exemple-main/.github/workflows/exercice.yml@main
       - name: echo le resultat du test
-        run: echo ${{ jobs.job1.outputs.test_result }}
+        run: echo ${{ steps.run-test.outcome }}
