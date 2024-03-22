@@ -15,7 +15,8 @@ jobs:
       - name: Run tests
         run: 
           npm test
-          echo "test_result=success" >> $GITHUB_OUTPUT
+      - name: set result test
+        run: echo "test_result=$?" >> $GITHUB_OUTPUT
       # - name: Build code
       #   run: npm run build
   #     - name: Upload the result of the build
