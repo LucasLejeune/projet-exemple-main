@@ -13,10 +13,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run tests
-        run: 
-          npm test
+        run: npm test
       - name: set result test
-        run: echo "test_result=$?" >> $GITHUB_OUTPUT
+        run: echo "test_result=success" >> $GITHUB_OUTPUT
       # - name: Build code
       #   run: npm run build
   #     - name: Upload the result of the build
