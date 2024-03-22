@@ -1,0 +1,11 @@
+name: Récupère le test du workflow 1 et retourne son résultat
+on: 
+  workflow_dispatch:
+
+jobs: 
+  job1:
+    name: Récupérer le résultat du 1er workflow
+    uses: projet-exemple-main/.github/exercice.yml
+  job2:
+    name: echo le resultat du test
+    run: echo ${{ job1.outputs.test_result }}
