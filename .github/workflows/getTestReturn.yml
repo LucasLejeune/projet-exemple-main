@@ -5,7 +5,7 @@ on:
 jobs: 
   job1:
     name: Récupérer le résultat du 1er workflow
-    uses: projet-exemple-main/.github/exercice.yml
+    uses: projet-exemple-main/.github/exercice.yml@main
   job2:
     name: echo le resultat du test
     run: echo ${{ job1.outputs.test_result }}
